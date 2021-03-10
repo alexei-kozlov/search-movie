@@ -1,0 +1,236 @@
+.btn {
+  width: 225px;
+  height: 60px;
+  border: 1px solid transparent;
+  background: linear-gradient(45deg, #496bfe 0%, #496bfe 40%, #5474fd 40%, #5474fd 100%);
+  padding: 15px 50px;
+  color: #fff;
+  font-family: "Noto Sans SC", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+.btn:hover, .btn:focus {
+  background: linear-gradient(45deg, #5474fd 0%, #5474fd 40%, #496bfe 40%, #496bfe 100%);
+}
+.btn:active {
+  border: 1px solid #0039ff;
+  opacity: 0.9;
+}
+
+.search {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.search__form {
+  width: 650px;
+  height: 60px;
+  border: 2px solid #0039ff;
+  border-radius: 5px;
+  text-align: left;
+  position: relative;
+  margin: 100px auto 0;
+}
+@media screen and (max-width: 850px) {
+  .search__form {
+    margin-top: 30px;
+    width: 75vw;
+  }
+}
+@media screen and (max-width: 520px) {
+  .search__form {
+    height: 30px;
+  }
+}
+.search__input {
+  width: 78%;
+  height: 100%;
+  margin: 0;
+  padding: 0 10px;
+  background: #fff;
+  outline: none;
+  border: none;
+  font-family: "Nova Mono", "Roboto Mono", monospace;
+  font-size: 20px;
+  color: #5474fd;
+  letter-spacing: 0.1em;
+}
+@media screen and (max-width: 520px) {
+  .search__input {
+    width: 88%;
+  }
+}
+.search__input::placeholder {
+  font-family: "Nova Mono", "Roboto Mono", monospace;
+  font-size: 22px;
+  color: rgba(84, 116, 253, 0.5);
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+@media screen and (max-width: 600px) {
+  .search__input::placeholder {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .search__input::placeholder {
+    font-size: 4vw;
+    text-align: center;
+  }
+}
+.search__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 146px;
+  height: 56px;
+  padding-left: 10px;
+  background: #496bfe;
+  outline: none;
+}
+.search__btn:hover {
+  background: #5474fd;
+}
+@media screen and (max-width: 520px) {
+  .search__btn {
+    width: 12%;
+    height: 26px;
+    padding: 5px;
+  }
+}
+.search__btn-name {
+  text-align: left;
+}
+@media screen and (max-width: 520px) {
+  .search__btn-name {
+    display: none;
+  }
+}
+.search__icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 520px) {
+  .search__icon {
+    transform: translateY(-50%) scale(0.8);
+    right: 20%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .search__icon {
+    right: 10%;
+  }
+}
+.search__preloader {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 520px) {
+  .search__preloader {
+    transform: translateY(-50%) scale(0.7);
+    right: 14%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .search__preloader {
+    right: -4%;
+  }
+}
+
+.loading__bar {
+  width: 30px;
+  height: 30px;
+}
+.loading__block {
+  position: absolute;
+  background-color: transparent;
+  width: 4px;
+  height: 7px;
+  transform: scale(0.4);
+  animation-name: loading;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+.loading__block--block-1 {
+  left: 0;
+  top: 12px;
+  animation-delay: 0.45s;
+  transform: rotate(-90deg);
+}
+.loading__block--block-2 {
+  left: 4px;
+  top: 4px;
+  animation-delay: 0.6s;
+  transform: rotate(-45deg);
+}
+.loading__block--block-3 {
+  left: 12px;
+  top: 0;
+  animation-delay: 0.75s;
+  transform: rotate(0deg);
+}
+.loading__block--block-4 {
+  right: 4px;
+  top: 4px;
+  animation-delay: 0.9s;
+  transform: rotate(45deg);
+}
+.loading__block--block-5 {
+  right: 0;
+  top: 12px;
+  animation-delay: 1.05s;
+  transform: rotate(90deg);
+}
+.loading__block--block-6 {
+  right: 4px;
+  bottom: 4px;
+  animation-delay: 1.2s;
+  transform: rotate(135deg);
+}
+.loading__block--block-7 {
+  bottom: 0;
+  left: 12px;
+  animation-delay: 1.35s;
+  transform: rotate(180deg);
+}
+.loading__block--block-8 {
+  left: 4px;
+  bottom: 4px;
+  animation-delay: 1.5s;
+  transform: rotate(-135deg);
+}
+
+@keyframes loading {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+.movie__list {
+  width: 90%;
+  height: auto;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/*# sourceMappingURL=app.component.css.map */

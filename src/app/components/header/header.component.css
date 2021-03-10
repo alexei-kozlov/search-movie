@@ -5,9 +5,20 @@
   width: 100%;
   height: auto;
 }
+@media screen and (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+}
 .header__logo {
   width: 10vw;
   height: auto;
+}
+@media screen and (max-width: 600px) {
+  .header__logo {
+    width: 30vw;
+  }
 }
 .header__title {
   margin: 0 0 0 6%;
@@ -18,6 +29,11 @@
   letter-spacing: 0.1em;
   text-align: center;
   white-space: nowrap;
+}
+@media screen and (max-width: 600px) {
+  .header__title {
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=header.component.css.map */

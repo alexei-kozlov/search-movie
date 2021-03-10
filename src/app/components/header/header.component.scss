@@ -5,9 +5,18 @@
   width: 100%;
   height: auto;
 
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
   &__logo {
     width: 10vw;
     height: auto;
+
+    @media screen and (max-width: 600px) {
+      width: 30vw;
+    }
   }
 
   &__title {
@@ -19,5 +28,9 @@
     letter-spacing: .1em;
     text-align: center;
     white-space: nowrap;
+
+    @media screen and (max-width: 600px) {
+      margin: 0 auto;
+    }
   }
 }

@@ -1,0 +1,11 @@
+<div class="movie__item" style="background: rgba(255,255,255,.5);">
+  <div class="movie__poster-wrapper">
+    <img class="movie__poster" [src]="movie?.Poster" [alt]="movie?.Title">
+  </div>
+  <span class="movie__title">{{movie?.Title}}</span>
+  <span class="movie__year">{{movie?.Year}}</span>
+  <a class="btn movie__btn" [href]="'http://www.imdb.com/title/' + movie?.imdbID" target="_blank">
+    To IMDB
+    <span class="btn__arrow">&rarr;</span>
+  </a>
+</div>
