@@ -10,5 +10,6 @@ import { Movie } from '../../models/movie.model';
 
 export class MovieComponent {
   @Input()
-  movie!: Movie;
+  movie: any = Movie;
+  movies: Movie[] = [];
 }

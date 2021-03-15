@@ -9,7 +9,8 @@ import {EMPTY} from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
+  providers: [OmdbService]
 })
 
 export class AppComponent implements OnInit {
@@ -18,28 +19,18 @@ export class AppComponent implements OnInit {
   findControl = new FormControl();
   // Ошибка поиска
   error: any = Error;
-  // Найденный фильм
+  // Найденный фильм(-ы)
   movie: any = Movie;
+  movies: Movie[] = [];
 
   // Подключение OMDbService для поиска фильма
   constructor(
     private omdbService: OmdbService) {
   }
 
-  // Прелоадер и иконка поиска
-  public preloader: boolean = false;
-  Activate() {
-    this.preloader = true;
-    setTimeout(() => {
-      this.preloader = false;
-    }, 3000);
-  }
-
   // Хук инициализации компонента
   ngOnInit() {
-    this.preloader = false;
-    this.movie = null;
-    this.error = null;
+    this.movies = [];
     this.findControl.valueChanges
       .pipe(
         // Фильтруем если введено меньше двух символов
@@ -51,9 +42,11 @@ export class AppComponent implements OnInit {
         // Запрашиваем данные пользователя
         switchMap(value =>
           this.omdbService.getMovie(value).pipe(
+
             // Обработка ошибок
-            catchError(error => {
-              this.movie = error;
+            catchError(err => {
+              this.error = err;
+              this.movies = [];
               return EMPTY;
             })
           )
@@ -61,7 +54,7 @@ export class AppComponent implements OnInit {
       )
       // Получение данных
       .subscribe(movie => {
-        this.movie = movie;
+        this.movies = movie.Search;
         this.error = movie;
       });
   }
