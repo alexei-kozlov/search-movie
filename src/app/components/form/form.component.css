@@ -110,8 +110,8 @@
 }
 .search__icon {
   position: absolute;
-  top: 50%;
-  right: 10px;
+  top: calc(50% + 2px);
+  right: 13px;
   transform: translateY(-50%);
 }
 @media screen and (max-width: 520px) {
@@ -159,48 +159,56 @@
   animation-direction: normal;
 }
 .loading__block--block-1 {
+  background-color: rgba(255, 255, 255, 0);
   left: 0;
   top: 12px;
   animation-delay: 0.45s;
   transform: rotate(-90deg);
 }
 .loading__block--block-2 {
+  background-color: rgba(255, 255, 255, 0.125);
   left: 4px;
   top: 4px;
   animation-delay: 0.6s;
   transform: rotate(-45deg);
 }
 .loading__block--block-3 {
+  background-color: rgba(255, 255, 255, 0.25);
   left: 12px;
   top: 0;
   animation-delay: 0.75s;
   transform: rotate(0deg);
 }
 .loading__block--block-4 {
+  background-color: rgba(255, 255, 255, 0.375);
   right: 4px;
   top: 4px;
   animation-delay: 0.9s;
   transform: rotate(45deg);
 }
 .loading__block--block-5 {
+  background-color: rgba(255, 255, 255, 0.5);
   right: 0;
   top: 12px;
   animation-delay: 1.05s;
   transform: rotate(90deg);
 }
 .loading__block--block-6 {
+  background-color: rgba(255, 255, 255, 0.625);
   right: 4px;
   bottom: 4px;
   animation-delay: 1.2s;
   transform: rotate(135deg);
 }
 .loading__block--block-7 {
+  background-color: rgba(255, 255, 255, 0.875);
   bottom: 0;
   left: 12px;
   animation-delay: 1.35s;
   transform: rotate(180deg);
 }
 .loading__block--block-8 {
+  background-color: white;
   left: 4px;
   bottom: 4px;
   animation-delay: 1.5s;
